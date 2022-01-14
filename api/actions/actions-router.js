@@ -1,6 +1,6 @@
 // Write your "actions" router here!
 const express = require("express")
-const res = require("express/lib/response")
+
 const { handleError, checkActionId } = require("./actions-middlware")
 const Actions = require("./actions-model")
 const router = express.Router()
