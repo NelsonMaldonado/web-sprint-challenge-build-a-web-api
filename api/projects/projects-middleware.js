@@ -29,7 +29,22 @@ function validateProject(req, res, next) {
   }
 }
 
+function validateCompleted(req, res, next) {
+  const { completed } = req.body
+
+  if (typeof completed != "boolean") {
+    next({
+      status: 400,
+      message: "Please complete project",
+    })
+  } else {
+    next()
+  }
+}
+
 module.exports = {
   handleError,
   checkProjectId,
+  validateProject,
+  validateCompleted,
 }
