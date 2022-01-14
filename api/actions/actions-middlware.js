@@ -12,7 +12,7 @@ function checkActionId(req, res, next) {
         req.actionFromDb = action
         next()
       } else {
-        next({ status: 404, message: "no projects found" })
+        next({ status: 404, message: "no action found" })
       }
     })
     .catch(next)
